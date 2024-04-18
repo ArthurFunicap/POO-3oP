@@ -8,8 +8,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
         ArrayList<Livro> livros = new ArrayList<>();
 
-        String titulo;
-        String autor;
+        String titulo = new String();
+        String autor = new String();
         char disponibilidade;
 
         int opcao;
@@ -22,16 +22,20 @@ public class Main {
             System.out.print("Digite uma opção: ");
             opcao = input.nextInt();
 
+            System.out.println();
+
+            input.nextLine();
+
             if(opcao == 1){
                 Livro livro = new Livro();
 
                 System.out.print("Digite o título do livro: ");
-                titulo = input.next();
-                input.nextLine();
+                titulo = input.nextLine();
+                titulo = titulo.trim();
                 livro.setTitulo(titulo);
                 System.out.print("Digite o nome do autor: ");
-                autor = input.next();
-                input.nextLine();
+                autor = input.nextLine();
+                autor = autor.trim();
                 livro.setAutor(autor);
                 System.out.print("O livro está disponível? (S/n): ");
                 disponibilidade = input.next().charAt(0);
